@@ -131,16 +131,22 @@ export function useSimulation() {
 
       await new Promise(resolve => setTimeout(resolve, 800));
 
-      // Step 3: Transmission (with potential tampering)
+      // Step 3: Start Transmission
+      addLog('System', '📤 Transmitting message and signature from A → B...', 'info');
+      
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
+      // Step 3b: Check for tampering during transmission
       let transmittedMessage = state.message;
       if (state.tamperMessage) {
         transmittedMessage = state.message + ' [TAMPERED]';
         addLog('Attacker', `🔴 Message tampered during transmission! New message: "${transmittedMessage}"`, 'error');
-      } else {
-        addLog('System', 'Transmitting message and signature from A → B...', 'info');
+        await new Promise(resolve => setTimeout(resolve, 800));
       }
 
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Step 3c: Transmission complete
+      addLog('System', '📥 Transmission complete. Message received by User B.', 'success');
+      await new Promise(resolve => setTimeout(resolve, 500));
 
       // Step 4: B receives and computes hash
       addLog('B', `Received message: "${transmittedMessage}"`, 'info');
