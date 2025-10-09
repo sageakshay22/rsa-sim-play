@@ -36,11 +36,11 @@ export function AppSidebar() {
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild tooltip={item.title}>
+                  <SidebarMenuButton asChild>
                     <NavLink
                       to={item.url}
                       className={({ isActive }) =>
-                        isActive ? "bg-accent text-accent-foreground font-medium" : ""
+                        isActive ? "bg-accent text-accent-foreground font-medium" : "text-foreground"
                       }
                     >
                       <item.icon />
