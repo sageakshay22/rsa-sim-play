@@ -29,7 +29,9 @@ export function AppSidebar() {
     <Sidebar collapsible="icon">
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>RSA Digital Signatures</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-foreground font-semibold text-base">
+            RSA Digital Signatures
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
