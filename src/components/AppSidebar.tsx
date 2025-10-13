@@ -29,7 +29,7 @@ export function AppSidebar() {
     <Sidebar collapsible="icon">
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className="text-foreground font-semibold text-base">
+          <SidebarGroupLabel className="text-sidebar-foreground font-semibold text-base">
             RSA Digital Signatures
           </SidebarGroupLabel>
           <SidebarGroupContent>
@@ -40,7 +40,7 @@ export function AppSidebar() {
                     <NavLink
                       to={item.url}
                       className={({ isActive }) =>
-                        isActive ? "bg-accent text-accent-foreground font-medium" : "text-foreground"
+                        isActive ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium" : "text-sidebar-foreground"
                       }
                     >
                       <item.icon />
